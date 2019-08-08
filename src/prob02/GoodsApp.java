@@ -8,7 +8,9 @@ public class GoodsApp {
 	public static void main(String[] args) {
 		
 		Scanner scanner = new Scanner(System.in);
-		String[] Goods = new String[COUNT_GOODS];
+		
+		Goods goods = new Goods(COUNT_GOODS);
+		String[] goodsCopy = new String[COUNT_GOODS];
 		
 		for(int i = 0; i < COUNT_GOODS; i++) {
 			String info = scanner.nextLine();
@@ -17,12 +19,14 @@ public class GoodsApp {
 			String name = data[0];
 			int price = Integer.parseInt(data[1]);
 			int count = Integer.parseInt(data[2]);
-			Goods[i] = name+"(가격:"+price+"원)이" + count + "개 입고 되었습니다." ;
-			//System.out.println(name + " : " + price + " : " + count);
+			goodsCopy[i] = name+"(가격:"+price+"원)이 " + count + "개 입고 되었습니다." ;	
+			
 		}
 		
-		for(int i = 0; i < Goods.length; i++) {
-			System.out.println(Goods[i]);
+		goods.setGoods(goodsCopy);
+		
+		for(int i = 0; i < goods.getGoods().length; i++) {
+			System.out.println(goods.getGoods()[i]);
 		}
 		scanner.close();
 	}
