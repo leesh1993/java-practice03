@@ -2,18 +2,40 @@ package prob02;
 
 public class Goods {
 	
-	private String[] goods;
+	private String goodsName;
+	private int goodsPrice;
+	private int goodsCount;
 	
-	public Goods(int count){
-		goods = new String[count];
+
+	public Goods(String goodsName, int goodsPrice, int goodsCount ) {
+		this.goodsName  = goodsName;
+		this.goodsPrice = goodsPrice;
+		this.goodsCount = goodsCount;
 	}
 	
-	public String[] getGoods() {
-		return goods;
+	
+	public String getGoodsName() {
+		return goodsName;
 	}
 
-	public void setGoods(String[] goods) {
-		this.goods = goods;
+	public void setGoodsName(String goodsName) {
+		this.goodsName = goodsName;
+	}
+
+	public int getGoodsPrice() {
+		return goodsPrice;
+	}
+
+	public void setGoodsPrice(int goodsPrice) {
+		this.goodsPrice = goodsPrice;
+	}
+
+	public int getGoodsCount() {
+		return goodsCount;
+	}
+
+	public void setGoodsCount(int goodsCount) {
+		this.goodsCount = goodsCount;
 	}
 	
 }

@@ -8,26 +8,24 @@ public class GoodsApp {
 	public static void main(String[] args) {
 		
 		Scanner scanner = new Scanner(System.in);
-		
-		Goods goods = new Goods(COUNT_GOODS);
-		String[] goodsCopy = new String[COUNT_GOODS];
-		
-		for(int i = 0; i < COUNT_GOODS; i++) {
+		Goods[] goods = new Goods[COUNT_GOODS];
+			
+		for(int i = 0; i < goods.length; i++) {
 			String info = scanner.nextLine();
-
 			String[] data = info.split(" ");
+			
 			String name = data[0];
 			int price = Integer.parseInt(data[1]);
 			int count = Integer.parseInt(data[2]);
-			goodsCopy[i] = name+"(가격:"+price+"원)이 " + count + "개 입고 되었습니다." ;	
+			
+			goods[i] = new Goods(name, price, count);
 			
 		}
-		
-		goods.setGoods(goodsCopy);
-		
-		for(int i = 0; i < goods.getGoods().length; i++) {
-			System.out.println(goods.getGoods()[i]);
+				
+		for(int i = 0; i < goods.length; i++) {	
+			System.out.println(goods[i].getGoodsName()+"(가격:"+goods[i].getGoodsPrice()+"원)이 " + goods[i].getGoodsCount() + "개 입고 되었습니다.");
 		}
+		
 		scanner.close();
 	}
 }
